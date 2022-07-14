@@ -350,7 +350,42 @@ startGame()
 
 // write your code after this line:
 
+    function turnAroundRight() {
+        KAREL.turnRight()
+        KAREL.putBall("blue")
+        KAREL.move()
+        KAREL.turnRight()
+        KAREL.putBall()
+    }
 
+    function turnAroundLeft() {
+        KAREL.turnLeft()
+        KAREL.putBall("blue")
+        KAREL.move()
+        KAREL.turnLeft()
+        KAREL.putBall()
+    }
+
+    let karelsFrontIsClear = true;
+
+    for (let i = 10; i > 0; i--) {
+
+        karelsFrontIsClear = true;
+
+        while (karelsFrontIsClear) {
+            KAREL.putBall();
+            KAREL.move();
+            karelsFrontIsClear = await KAREL.isFrontClear();
+        }
+
+        if (await KAREL.isFacing('east')) {
+            turnAroundRight();
+        }
+        else {
+            turnAroundLeft();
+        }
+
+    }
 
 
 
