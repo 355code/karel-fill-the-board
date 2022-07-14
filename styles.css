@@ -1,0 +1,130 @@
+:root{
+    --dog-img: url("https://i.ibb.co/tm5nFnC/dog.png"); 
+    /* dog icon from flaticon.com */
+    --dog-img: url("https://mpng.subpng.com/20190218/opt/kisspng-dog-breed-puppy-leash-police-dog-dog-icon-free-download-png-and-vector-5c6ae3b2699303.7538574715505089784324.jpg");
+    /* dog icon from subpng.com */
+    --dog-img: url("https://i.ibb.co/4tjmR8b/Untitled-design-10.png");
+}   
+
+body{
+    background-color: lightgoldenrodyellow;
+}
+
+input{
+    margin-bottom: 15px;
+}
+
+label{
+    font-size: 1.2em;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    margin: 3px;
+}
+
+.controls-wrapper{
+    display: flex;
+    margin: auto;
+    padding: 30px;
+    flex-direction: column;
+    justify-content: center;
+    width: 300px;
+}
+
+.playground{
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.code-wrapper{
+    position: relative;
+}
+
+.code{
+    position: relative;
+    height: 500px;
+    width: 400px;
+    padding: 60px 15px 0;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bold;
+    font-size: 1.2em;
+    letter-spacing: 1px;
+    z-index: 1;
+    opacity: 100%;
+}
+
+#run{
+    display: block;
+    margin: 0 auto 10px;
+    height: 40px;
+    width: 70px;
+    background-color: deepskyblue;
+    color: white;
+    font-weight: bold;
+    border: none;
+    z-index: 1000;
+}
+
+#run:hover{
+    background-color: aqua;
+}
+
+#run:active{
+    background-color: black;
+}
+
+.display{
+    --grid-size: 10;
+    --box-size: 50px;
+    position: relative;
+}
+
+.grid{
+    /* --grid-size: 10;
+    --box-size: 50px; */
+    display: grid;
+    height: fit-content;
+    width: fit-content;
+    grid-template-columns: repeat(var(--grid-size), var(--box-size));
+    grid-template-rows: repeat(var(--grid-size), var(--box-size));
+    border: solid;
+    border-width: 3px 4px 4px 3px;
+    border-radius: 5px;
+}
+
+.box{
+    position: relative;
+    height: var(--box-size);
+    width: var(--box-size);
+    border: solid 0.5px;
+    border-color: gray;
+    background-color: whitesmoke;
+}
+
+.ball{
+    display: block;
+    position: absolute;
+    height: calc(var(--box-size) - 10px);
+    width: calc(var(--box-size) - 10px);
+    margin: 5px;
+    border-radius: 50%;
+    background-color: red;
+}
+
+.karel{
+    display: block;
+    position: absolute;
+    height: calc(var(--box-size) - 10px);
+    width: calc(var(--box-size) - 10px);
+    margin: 5px;
+    background: var(--dog-img);
+    background-size: contain;
+    z-index: 1;
+}
+
+
+#canvas{
+    position: absolute;
+    top: 4px;
+    left: 4px;
+}
